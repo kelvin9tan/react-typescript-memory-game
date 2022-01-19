@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from 'react-redux'
-import { setTheme, setGameConfig } from '../../store/actions'
+import { setTheme, setGameConfig, setName } from '../../store/actions'
 import DIFFICULTIES from '../../config/Difficulties'
 import { useTypedSelector } from '../../hooks'
 import { ThemeTypes } from '../../types/Theme'
@@ -11,6 +11,10 @@ import {
   MenuContainer,
   MenuContent,
   AppName,
+  NameLabelContainer,
+  NameLabel,
+  NameLabelTitle,
+  NameInputField,
   DifficultyContainer,
   DifficultyLabelContainer,
   DifficultyLabelSubtitle,
@@ -54,6 +58,16 @@ const DifficultyChooser: React.FC = () => {
         <AppName>React Memory Game</AppName>
 
         <MenuContent>
+          <NameLabelContainer>
+            <NameLabel>
+              <NameLabelTitle>Type your name:</NameLabelTitle>
+              <NameInputField type="text" onChange={(e) => {
+                const action = setName({ name: e.target.value })
+                dispatch(action)
+              }} />
+            </NameLabel>
+          </NameLabelContainer>
+
           <DifficultyLabelContainer>
             <DifficultyLabel>
               <DifficultyLabelTitle>Choose a Difficulty:</DifficultyLabelTitle>

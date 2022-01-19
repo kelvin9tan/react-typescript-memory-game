@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTypedSelector } from '../../../hooks'
 import useClearGameState from '../useClearGameState'
 import GameContext from '../GameContext'
 import {
@@ -8,6 +9,8 @@ import {
   LeftSideContainer,
   BackButton,
   DifficultyIndicator,
+  CenterSideContainer,
+  WelcomLabel,
   RightSideContainer,
   Timer,
   TimerText,
@@ -30,6 +33,7 @@ const GameControlBar: React.FC = () => {
 
   const onClearGameState = useClearGameState()
   const history = useHistory()
+  const { name } = useTypedSelector(({ Name }) => Name)
 
   useEffect(onClearGameState, [])
 
@@ -62,7 +66,11 @@ const GameControlBar: React.FC = () => {
           {`Playing with ${difficulty} cards`}
         </DifficultyIndicator>
       </LeftSideContainer>
-
+      <CenterSideContainer>
+        <WelcomLabel>
+          Welcome <strong>{name}</strong>!
+        </WelcomLabel>
+      </CenterSideContainer>
       <RightSideContainer>
         <Timer>
           <FontAwesomeIcon icon="clock" />

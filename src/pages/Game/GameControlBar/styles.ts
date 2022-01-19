@@ -50,6 +50,16 @@ export const DifficultyIndicator = styled.div`
   }
 `
 
+export const CenterSideContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex: 1;
+`
+
+export const WelcomLabel = styled.label`
+  font-size: 25px;
+`
+
 export const RightSideContainer = styled.div`
   display: flex;
   align-items: center;

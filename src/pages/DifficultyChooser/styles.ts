@@ -30,6 +30,29 @@ export const AppName = styled.h1`
 export const MenuContent = styled.div`
   padding: 32px 24px;
 `
+
+export const NameLabelContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  margin-bottom: 20px;
+`
+
+export const NameLabel = styled.div`
+  flex: 1;
+`
+
+export const NameLabelTitle = styled.div`
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2rem;
+  padding-bottom: 5px;
+`
+
+export const NameInputField = styled.input`
+  color: black;
+`
+
 export const DifficultyLabelContainer = styled.div`
   display: flex;
   align-items: center;
