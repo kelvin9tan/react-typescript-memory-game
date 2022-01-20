@@ -19,3 +19,6 @@ This is a memory game created with React, TypeScript and Styled Components.
 - [x] Make the game responsive
 - [x] Switch themes
 
+## Backend Url Config
+
+You can find the BackendURL.ts file in **src/config**, and please update this url as you wish.
