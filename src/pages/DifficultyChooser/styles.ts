@@ -101,20 +101,40 @@ export const DifficultyContainer = styled.div`
   margin-top: 24px;
 `
 
-export const PlayButtonContainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
   margin-top: 24px;
 `
 
-export const PlayButton = styled.div`
+export const PlayButton = styled.div`\
+  display: flex;
   font-size: 2.4rem;
   text-transform: uppercase;
   font-weight: bold;
   background: ${({ theme }): string => theme.accent};
   color: white;
   padding: 20px 16px;
-  text-align: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0 8px 0 auto;
+  width: 50%;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: scale(1.02);
+  }
+`
+
+export const HighScoreButton = styled.div`
+  display: flex;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: ${({ theme }): string => theme.cardBackFace};
+  color: white;
+  padding: 20px 16px;
+  justify-content: center;
   border-radius: 5px;
   margin: 0 8px 0 auto;
   width: 50%;

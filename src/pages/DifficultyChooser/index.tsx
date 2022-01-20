@@ -23,7 +23,8 @@ import {
   DifficultyLabel,
   Difficulty,
   PlayButton,
-  PlayButtonContainer,
+  HighScoreButton,
+  ButtonContainer,
 } from './styles'
 
 const DifficultyChooser: React.FC = () => {
@@ -35,6 +36,7 @@ const DifficultyChooser: React.FC = () => {
   const selectedDifficulty = useTypedSelector(
     ({ GameConfig }) => GameConfig.difficulty,
   )
+  const { name } = useTypedSelector(({ Name }) => Name)
 
   const onSelectDifficulty = (difficulty: number) => (): void => {
     const action = setGameConfig({ difficulty })
@@ -42,7 +44,16 @@ const DifficultyChooser: React.FC = () => {
   }
 
   const onPlay = (): void => {
-    history.push('/game')
+    let tempName = name
+    if(tempName.trim().length === 0) {
+      alert("Please type your name!")
+    } else {
+      history.push('/game')
+    }
+  }
+
+  const highScore = (): void => {
+    history.push('/highscore')
   }
 
   const onSwitchThemes = (): void => {
@@ -108,9 +119,10 @@ const DifficultyChooser: React.FC = () => {
             />
           </DifficultyContainer>
 
-          <PlayButtonContainer>
+          <ButtonContainer>
+            <HighScoreButton onClick={highScore}>High Score</HighScoreButton>
             <PlayButton onClick={onPlay}>Play</PlayButton>
-          </PlayButtonContainer>
+          </ButtonContainer>
         </MenuContent>
       </MenuContainer>
     </Container>

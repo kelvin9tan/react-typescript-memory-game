@@ -7,6 +7,7 @@ import { useTypedSelector } from '../../hooks'
 import THEME_COLORS from '../../styles/Theme'
 import { ThemeTypes } from '../../types/Theme'
 import Game from '../Game'
+import HighScore from '../HighScore'
 
 const App: React.FC = () => {
   const themeType = useTypedSelector(({ Theme }) => Theme.type)
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={DificultyChooser} />
           <Route exact path="/game" component={Game} />
+          <Route exact path="/highscore" component={HighScore} />
         </Switch>
       </HashRouter>
     </ThemeProvider>
